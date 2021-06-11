@@ -41,6 +41,7 @@ formulario.addEventListener('submit', (e) => {
     
 })
 
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -60,11 +61,13 @@ var db = firebase.firestore();
     console.error("Error adding document: ", error);
   }); */
 
-db.collection("Libro")
+
+  //muestra los libros
+  db.collection("Libro")
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
+      //console.log(`${doc.id} => ${doc.data()}`);
     });
   });
 
@@ -75,9 +78,9 @@ var docRef = db.collection("Libro")
 docRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         //console.log(`${doc.id} => ${doc.data()}`);
-        console.log(doc.data().Titulo);
+        //console.log(doc.data().Titulo);
         libros.innerHTML += `
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
             <div class="info">
               <div class="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle">
                 <i class="ni ni-book-bookmark"></i>
@@ -92,3 +95,30 @@ docRef.get().then((querySnapshot) => {
         `
     });
 });
+
+
+formulario.addEventListener('submit', (e) => {
+  e.preventDefault()
+  if(!email.value.trim()){
+      console.log('input vacio')
+      return
+  }else if(!pass.value.trim()){
+      console.log('input vacio')
+      return
+  }
+  
+  firebase.firestore().collection('Usuario')
+      .onSnapshot(query => {
+          query.forEach(doc =>{
+              console.log(doc.data())
+              if(doc.data().Correo == email.value && doc.data().Password == pass.value){
+                  console.log('Encontrado')
+              }
+              else{
+                  console.log('No encontrado')
+                  return
+              }
+          })
+      })
+  
+})
