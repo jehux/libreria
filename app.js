@@ -62,6 +62,9 @@ if (libros != null){
                 </div>
                 <h6 class="info-title text-uppercase text-primary">${doc.data().Titulo}</h6>
                 <p class="description opacity-8">${doc.data().Notas}</p>
+                <p class="description opacity-8">Autor: ${doc.data().Autor}</p>
+                <p class="description opacity-8">Edicion: ${doc.data().Edicion}</p>
+                <p class="description opacity-8">Editrial: ${doc.data().Editorial}</p>
                 <a href="javascript:;" class="text-primary">Ver libro
                   <i class="ni ni-bold-right text-primary"></i>
                 </a>
