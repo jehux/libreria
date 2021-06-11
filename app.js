@@ -43,9 +43,9 @@ var docRef = db.collection("Libro")
 docRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         //console.log(`${doc.id} => ${doc.data()}`);
-        console.log(doc.data().Titulo);
+        //console.log(doc.data().Titulo);
         libros.innerHTML += `
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
             <div class="info">
               <div class="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle">
                 <i class="ni ni-book-bookmark"></i>
