@@ -9,6 +9,37 @@ var firebaseConfig = {
   appId: "1:945767195250:web:d8f60823814e0f744158eb",
 };
 
+const formulario = document.querySelector('#formulario')
+const email = document.querySelector('#email')
+const pass = document.querySelector('#pass')
+const error = document.querySelector('#error')
+
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if(!email.value.trim()){
+        console.log('input vacio')
+        return
+    }else if(!pass.value.trim()){
+        console.log('input vacio')
+        return
+    }
+    
+    firebase.firestore().collection('Usuario')
+        .onSnapshot(query => {
+            query.forEach(doc =>{
+                console.log(doc.data())
+                if(doc.data().Correo == email.value && doc.data().Password == pass.value){
+                    console.log('Encontrado')
+                }
+                else{
+                    console.log('No encontrado')
+                    return
+                }
+            })
+        })
+    
+})
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
