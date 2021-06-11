@@ -20,6 +20,10 @@
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="./assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
 </head>
 
 <body class="landing-page">
@@ -101,13 +105,19 @@
           </li>
         </ul>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-          <li class="nav-item d-none d-lg-block">
-            <a href="./login.html" class="btn btn-neutral btn-icon">
-              <span class="nav-link-inner--text">Login</span>
+          <li class="nav-item d-none d-lg-block" id="login-btn">
+            <a href="./login.html" class="btn btn-neutral btn-icon" >
+              <span class="nav-link-inner--text" >Login</span>
             </a>
           </li>
         </ul>
-        
+        <ul class="navbar-nav align-items-lg-center ">
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" id=nombreUser>
+              <span class="nav-link-inner--text"></span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -290,6 +300,7 @@
   <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
   <script src="./assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
