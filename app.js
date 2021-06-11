@@ -16,33 +16,6 @@ const error = document.querySelector('#error')
 const nombreUser = document.querySelector('#nombreUser')
 const loginBoton = document.querySelector('#login-btn')
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault()
-    if(!email.value.trim()){
-        console.log('input vacio')
-        return
-    }else if(!pass.value.trim()){
-        console.log('input vacio')
-        return
-    }
-    
-    firebase.firestore().collection('Usuario')
-        .onSnapshot(query => {
-            query.forEach(doc =>{
-                console.log(doc.data())
-                if(doc.data().Correo == email.value && doc.data().Password == pass.value){
-                  //Aqui se tiene que pasar a la siguiente pagina
-                    console.log('Encontrado')
-                }
-                else{
-                    console.log('No encontrado')
-                    return
-                }
-            })
-        })
-    
-})
-
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
