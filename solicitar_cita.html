@@ -1,41 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MiLibreria</title>
-  </head>
-  <body>
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
-    <script src="app.js"></script>
+<html lang="es">
 
-    <h1>Mi Biblioteca xD</h1>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title>
+    MiBiblioteca.com
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link href="./assets/css/font-awesome.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="./assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+</head>
 
-    <h2>Formulario</h2>
-
-    <form id="formulario">
-      <label for="Fecha_Creada">Fecha_Creada</label><br />
-      <input type="date" name="Fecha_Creada" id="Fecha_Creada" /><br />
-      <label for="Fecha_Cita">Fecha_Cita</label><br />
-      <input type="date" name="Fecha_Cita" id="Fecha_Cita" /><br />
-      <label for="ID_Usuario">ID_Usuario</label><br />
-      <input type="text" name="ID_Usuario" id="ID_Usuario" /><br />
-      <label for="buscar_libro">buscar_libro</label><br />
-      <input type="text" name="buscar_libro" id="buscar_libro" /><br />
-      <button type="submit">Agendar</button>
-    </form>
-    <div>
-        <h3>Libros</h3>
+<body class="landing-page">
+    <!-- Navbar -->
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light py-2">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="index.html">
+          MiBiblioteca.com
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  MiBiblioteca.com
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a href="./catalogo.html" class="nav-link" href="./catalogo.html" role="button">
+                
+                <span class="nav-link-inner--text">Catálogo</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="./solicitar_cita.html" class="nav-link" href="#" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Citas</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+            <li class="nav-item d-none d-lg-block">
+              <a href="./login.html" class="btn btn-neutral btn-icon">
+                <span class="nav-link-inner--text">Login</span>
+              </a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="wrapper">
+      <div class="section section-hero section-shaped">
+        <div class="shape shape-style-3 shape-default">
+          <span class="span-150"></span>
+          <span class="span-50"></span>
+          <span class="span-50"></span>
+          <span class="span-75"></span>
+          <span class="span-100"></span>
+          <span class="span-75"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+        </div>
+        <div class="container pt-lg-7">
+          <div class="row justify-content-center">
+            <div class="col-lg-5">
+              <div class="card bg-secondary shadow border-0">
+                <div class="card-body px-lg-5 py-lg-5">
+                  <div class="text-center text-muted mb-4">
+                    <div>
+                      <h3>Agendar Cita</h3>
+                    </div>
+                  </div>
+                  <form role="form" id="formulario">
+                    <p>Fecha de creacion</p>
+                      <div class="form-group mb-3">
+                        <div class="input-group input-group-alternative">
+                          <input class="form-control" placeholder="Correo" type="date" id="Fecha_Creada">
+                        </div>
+                      </div>
+                      <p>Fecha de cita</p>
+                      <div class="form-group mb-3">
+                        <div class="input-group input-group-alternative">
+                          <input class="form-control" placeholder="Correo" type="date" id="Fecha_Cita">
+                        </div>
+                      </div>
+                      <p>¿Cúales son tus libros?</p>
+                      <div class="form-group mb-3">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-books"></i></span>
+                          </div>
+                          <input class="form-control" placeholder="Buscar..." type="text" id="libro">
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary my-4">Agendar</button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    ID_libros [ ]
+    <!--   Core JS Files   -->
+    <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="./assets/js/plugins/bootstrap-switch.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <script src="./assets/js/plugins/moment.min.js"></script>
+    <script src="./assets/js/plugins/datetimepicker.js" type="text/javascript"></script>
+    <script src="./assets/js/plugins/bootstrap-datepicker.min.js"></script>
+    <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
+    <script src="./assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   </body>
 </html>
