@@ -29,6 +29,7 @@ formulario.addEventListener('submit', (e) => {
             query.forEach(doc =>{
                 console.log(doc.data())
                 if(doc.data().Correo == email.value && doc.data().Password == pass.value){
+                  //Aqui se tiene que pasar a la siguiente pagina
                     console.log('Encontrado')
                 }
                 else{
