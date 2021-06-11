@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiLibreria</title>
+  </head>
+  <body>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="app.js"></script>
+
+    <h1>Mi Biblioteca xD</h1>
+
+    <h2>Formulario</h2>
+
+    <form id="formulario">
+      <label for="Fecha_Creada">Fecha_Creada</label><br />
+      <input type="date" name="Fecha_Creada" id="Fecha_Creada" /><br />
+      <label for="Fecha_Cita">Fecha_Cita</label><br />
+      <input type="date" name="Fecha_Cita" id="Fecha_Cita" /><br />
+      <label for="ID_Usuario">ID_Usuario</label><br />
+      <input type="text" name="ID_Usuario" id="ID_Usuario" /><br />
+      <label for="buscar_libro">buscar_libro</label><br />
+      <input type="text" name="buscar_libro" id="buscar_libro" /><br />
+      <button type="submit">Agendar</button>
+    </form>
+    <div>
+        <h3>Libros</h3>
+    </div>
+
+    ID_libros [ ]
+  </body>
+</html>
